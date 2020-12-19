@@ -13,9 +13,9 @@ const FILES_TO_CACHE = [
 ];
 
 // install
-self.addEventListener("install", function (e) {
+self.addEventListener("install", e => {
   e.waitUntil(
-    caches.open(DATA_CACHE_NAME).then(function (cache) {
+    caches.open(DATA_CACHE_NAME).then(cache => {
       console.log("Opened cache");
       return cache.addAll(FILES_TO_CACHE);
     })
